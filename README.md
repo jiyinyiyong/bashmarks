@@ -12,7 +12,9 @@
     g <bookmark_name> - Goes (cd) to the directory associated with "bookmark_name"
     p <bookmark_name> - Prints the directory associated with "bookmark_name"
     d <bookmark_name> - Deletes the bookmark
-    l                 - Lists all available bookmarks
+    k                 - Lists all available bookmarks
+    l                 - Lists all files in current directory
+    c                 - Goes to a directory and lists all files
     
 ## Example Usage
 
@@ -20,9 +22,11 @@
     $ s webfolder
     $ cd /usr/local/lib/
     $ s locallib
-    $ l
+    $ k
     $ g web<tab>
     $ g webfolder
+    $ l
+    $ c /home/
 
 ## Where Bashmarks are stored
     
