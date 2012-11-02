@@ -54,6 +54,8 @@ function g {
     check_help $1
     source $SDIRS
     cd "$(eval $(echo echo $(echo \$DIR_$1)))"
+    echo -e '\033[0;35;1m'`pwd`'\033[0m'
+    ls -CF
 }
 
 # print bookmark
@@ -158,6 +160,6 @@ else
     complete -F _comp d
 fi
 function c(){
-    cd $1;
-    l;
+    cd $1
+    ls -CF
 }
