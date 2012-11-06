@@ -161,5 +161,5 @@ else
 fi
 function c(){
     cd $1
-    ls -CF
+    ls --color=auto -p
 }
