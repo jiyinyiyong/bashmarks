@@ -54,8 +54,8 @@ function g {
     check_help $1
     source $SDIRS
     cd "$(eval $(echo echo $(echo \$DIR_$1)))"
-    echo -e '\033[0;35;1m'`pwd`'\033[0m'
-    ls -CF
+    echo -e '\033[0;30;1m'`pwd`'\033[0m'
+    ls --color=auto -p
 }
 
 # print bookmark
