@@ -23,6 +23,9 @@
 
 
 # USAGE: 
+
+# c <dirname>       - `cd` a dir and print files
+# newdir <dirname>  - `mkdir` and `cd` a dir
 # s bookmarkname - saves the curr dir as bookmarkname
 # g bookmarkname - jumps to the that bookmark
 # g b[TAB] - tab completion is available
@@ -79,11 +82,13 @@ function d {
 function check_help {
     if [ "$1" = "-h" ] || [ "$1" = "-help" ] || [ "$1" = "--help" ] ; then
         echo ''
+        echo 'c <dirname>       - `cd` a dir and print files'
+        echo 'newdir <dirname>  - `mkdir` and `cd` a dir'
         echo 's <bookmark_name> - Saves the current directory as "bookmark_name"'
         echo 'g <bookmark_name> - Goes (cd) to the directory associated with "bookmark_name"'
         echo 'p <bookmark_name> - Prints the directory associated with "bookmark_name"'
         echo 'd <bookmark_name> - Deletes the bookmark'
-        echo 'l                 - Lists all available bookmarks'
+        echo 'k                 - Lists all available bookmarks'
         kill -SIGINT $$
     fi
 }
@@ -162,4 +167,9 @@ fi
 function c(){
     cd $1
     ls --color=auto -p
+}
+
+function newdir(){
+    mkdir $1
+    cd $1
 }
