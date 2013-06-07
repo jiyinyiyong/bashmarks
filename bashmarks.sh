@@ -82,13 +82,14 @@ function d {
 function check_help {
     if [ "$1" = "-h" ] || [ "$1" = "-help" ] || [ "$1" = "--help" ] ; then
         echo ''
-        echo 'c <dirname>       - `cd` a dir and print files'
-        echo 'newdir <dirname>  - `mkdir` and `cd` a dir'
-        echo 's <bookmark_name> - Saves the current directory as "bookmark_name"'
-        echo 'g <bookmark_name> - Goes (cd) to the directory associated with "bookmark_name"'
-        echo 'p <bookmark_name> - Prints the directory associated with "bookmark_name"'
-        echo 'd <bookmark_name> - Deletes the bookmark'
-        echo 'k                 - Lists all available bookmarks'
+        echo 's <bookmark_name>  - Saves the current directory as "bookmark_name"'
+        echo 'g <bookmark_name>  - Goes (cd) to the directory associated with "bookmark_name"'
+        echo 'p <bookmark_name>  - Prints the directory associated with "bookmark_name"'
+        echo 'd <bookmark_name>  - Deletes the bookmark'
+        echo 'k                  - Lists all available bookmarks'
+        echo 'l                  - Lists all files in current directory'
+        echo 'c <folder_name>    - Goes to a directory and lists all files'
+        echo 'cdir <folder_name> - Enter the new folder, if not exists, create one and enter'
         kill -SIGINT $$
     fi
 }
@@ -169,7 +170,7 @@ function c(){
     ls --color=auto -p
 }
 
-function newdir(){
+function cdir(){
     mkdir $1
     cd $1
 }
