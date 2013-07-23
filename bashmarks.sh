@@ -58,7 +58,7 @@ function g {
     source $SDIRS
     cd "$(eval $(echo echo $(echo \$DIR_$1)))"
     echo -e '\033[0;30;1m'`pwd`'\033[0m'
-    ls --color=auto -p
+    ls -pG
 }
 
 # print bookmark
@@ -167,7 +167,7 @@ else
 fi
 function c(){
     cd $1
-    ls --color=auto -p
+    ls -pG
 }
 
 function cdir(){
