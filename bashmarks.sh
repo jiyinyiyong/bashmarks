@@ -166,11 +166,11 @@ else
     complete -F _comp d
 fi
 function c(){
-    cd $1
+    cd "$1"
     ls -pG
 }
 
 function cdir(){
-    mkdir $1
-    cd $1
+    mkdir "$1"
+    cd "$1"
 }
